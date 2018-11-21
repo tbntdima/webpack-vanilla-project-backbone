@@ -1,20 +1,29 @@
 # Webpack based project backbone
+Simple webpack base project backbone for small projects.
+Designed to work with php server
 
+## Features:
+* ES6 -> ES5 (babel) -> Minimized
+* SCSS -> CSS -> Prefixed -> Minimized
+* Images -> Minimized
+* Live Reaload + HMR -> stream to Apache
 
-## Backbone provides the following features:
-* SCSS -> CSS -> Prefixing -> Minimizing
-* ES6 -> ES5 (babel) -> Minimizing
-* Live Reaload + HRML -> stream to Apache
-
-## Includes:
+## Libraries:
 * Twitter Bootstrap mixins + utilities + grid + reboot
 
-## Notes:
-* By default an index file has 'php' extension, if you want to change it to 'html',
-You can do it in webpack.dev.js and webpack.prod.js files here:
+## Usage:
+### If you want to use index.html without php server support:
+* Update webpack.prod.js file:
 ```
 new HtmlWebpackPlugin({
-  filename: 'index.php',
-  template: 'src/index.php'
+  filename: 'index.html',
+  template: 'src/index.html'
 }),
 ```
+* Change index.php to index.html in src folder
+* use: ```npm run start``` for webpack server
+* use: ```npm run build``` for production
+
+### If you want to use index.php with php server
+* use ```npm run server``` to run the webpack server. It will only server assets on localhost:9000. To run the website itself run your apache server.
+* use ```npm run build``` for production

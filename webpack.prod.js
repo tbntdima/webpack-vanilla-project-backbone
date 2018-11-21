@@ -46,7 +46,8 @@ module.exports = {
                 })
               ]
             }
-          }
+          },
+          'sass-loader'
         ]
       },
       // Images

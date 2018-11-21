@@ -4,7 +4,8 @@
   "description": "Webpack based project backbone",
   "private": true,
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "start": "webpack-dev-server --open --config webpack.server-for-html.js",
+    "server": "webpack-dev-server --open --config webpack.server-for-php.js",
     "build": "webpack --config webpack.prod.js"
   },
   "repository": {
