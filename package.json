@@ -1,0 +1,24 @@
+{
+  "name": "webpack-project-base",
+  "version": "1.0.0",
+  "description": "Webpack based project backbone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmitriyaa/webpack-project-base.git"
+  },
+  "keywords": [
+    "webpack",
+    "project",
+    "base"
+  ],
+  "author": "Dmitriy An",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmitriyaa/webpack-project-base/issues"
+  },
+  "homepage": "https://github.com/dmitriyaa/webpack-project-base#readme"
+}
