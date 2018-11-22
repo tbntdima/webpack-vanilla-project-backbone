@@ -11,7 +11,13 @@ Designed to work with php server.
 ## Libraries:
 * Twitter Bootstrap mixins + utilities + grid + reboot
 
+### Requirements:
+* Nodejs 10
+
 ## Usage:
+```cd path_to_webpack-project-backbone```
+```npm install```
+
 ### If you want to use index.html without php server support:
 * Change index.php to index.html in src folder.
 * Update webpack.prod.js file to:
