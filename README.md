@@ -24,7 +24,7 @@ npm install
 ```
 Then you have two options:
 ### Use index.html without php server support:
-* Change index.php to index.html in src folder.
+* Change index.php to index.html in ```src``` folder.
 * Update webpack.prod.js file to:
 ```
 new HtmlWebpackPlugin({
@@ -32,7 +32,7 @@ new HtmlWebpackPlugin({
   template: 'src/index.html'
 }),
 ```
-* Launch webpack server (localhost:5000) and start developing in _src_ folder.
+* Launch webpack server (localhost:5000) and start developing in ```src``` folder.
 ```
 npm run start
 ```
