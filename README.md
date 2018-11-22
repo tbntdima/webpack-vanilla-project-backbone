@@ -11,18 +11,19 @@ Designed to work with php server.
 ## Libraries:
 * Twitter Bootstrap mixins + utilities + grid + reboot
 
-### Requirements:
+## Requirements:
 * Nodejs 10
 
 ## Usage:
+First of all:
 ```
 cd path_to_webpack-project-backbone
 ```
 ```
 npm install
 ```
-
-### If you want to use index.html without php server support:
+Then you have two options:
+### Use index.html without php server support:
 * Change index.php to index.html in src folder.
 * Update webpack.prod.js file to:
 ```
@@ -31,9 +32,21 @@ new HtmlWebpackPlugin({
   template: 'src/index.html'
 }),
 ```
-* Use: ```npm run start``` to launch webpack server (localhost:5000) and start developing.
-* Use: ```npm run build``` once you are ready to deploy the project on real server.
+* Launch webpack server (localhost:5000) and start developing in _src_ folder.
+```
+npm run start
+```
+* Oce you are ready to deploy the project on real server.
+```
+npm run build
+```
 
-### If you want to use index.php with php server
-* Use ```npm run server``` to run the webpack server. It serve assets on localhost:9000 and stream them to your php server (like localhost:8080).
-* Use ```npm run build``` once you are ready to deploy the project on real server.
+### Use index.php with php server
+* Run the webpack server. It serve assets on localhost:9000 and stream them to your php server (like localhost:8080).
+```
+npm run server
+```
+* Once you are ready to deploy the project on real server.
+ ```
+ npm run build
+ ```
