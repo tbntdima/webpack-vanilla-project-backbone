@@ -16,6 +16,7 @@ Designed to work with php server.
 
 ## Usage:
 ```cd path_to_webpack-project-backbone```
+
 ```npm install```
 
 ### If you want to use index.html without php server support:
