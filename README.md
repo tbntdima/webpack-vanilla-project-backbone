@@ -15,7 +15,7 @@ Designed to work with php server.
 * Nodejs 10
 
 ## Usage:
-First of all:
+First of all download all the dependencies:
 ```
 cd path_to_webpack-project-backbone
 ```
