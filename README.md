@@ -24,8 +24,8 @@ npm install
 ```
 Then you have two options:
 ### Use index.html without php server support:
-* Change index.php to index.html in ```src``` folder.
-* Update webpack.prod.js file to:
+* Change ```index.php``` to ```index.html``` in ```src``` folder.
+* Update ```webpack.prod.js``` file to:
 ```
 new HtmlWebpackPlugin({
   filename: 'index.html',
