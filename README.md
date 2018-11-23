@@ -24,14 +24,6 @@ npm install
 ```
 Then you have two options:
 ### Use index.html without php server support:
-* Change ```index.php``` to ```index.html``` in ```src``` folder.
-* Update ```webpack.prod.js``` file to:
-```
-new HtmlWebpackPlugin({
-  filename: 'index.html',
-  template: 'src/index.html'
-}),
-```
 * Launch webpack server (localhost:5000) and start developing in ```src``` folder.
 ```
 npm run start
@@ -42,6 +34,14 @@ npm run build
 ```
 
 ### Use index.php with php server
+* Change ```index.html``` to ```index.php``` in ```src``` folder.
+* Update ```webpack.prod.js``` file to:
+```
+new HtmlWebpackPlugin({
+  filename: 'index.php',
+  template: 'src/index.php'
+}),
+```
 * Run the webpack server. It serve assets on localhost:9000 and stream them to your php server (like localhost:8080).
 ```
 npm run server
