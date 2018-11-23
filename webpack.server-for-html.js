@@ -67,6 +67,19 @@ module.exports = {
           }
         ]
       },
+      // Fonts
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]?[hash]',
+              outputPath: 'fonts/'
+            }
+          }
+        ]
+      },
       // HTML|PHP files
       {
         test: /\.(html|php)$/,
