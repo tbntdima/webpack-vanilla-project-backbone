@@ -1,7 +1,6 @@
 const path = require('path');
 const postcssPresetEnv = require('postcss-preset-env');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -57,8 +56,16 @@ module.exports = {
       },
       // Images
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader']
+        test: /\.(png|svg|jpg|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              outputPath: 'images/'
+            }
+          }
+        ]
       },
       // HTML|PHP files
       {
@@ -75,12 +82,13 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'src/index.html'
     }),
-    new MiniCssExtractPlugin({}),
+    new MiniCssExtractPlugin({
+      filename: '[name].css'
+    }),
   ],
   optimization: {
     minimizer: [

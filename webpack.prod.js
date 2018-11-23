@@ -13,7 +13,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].js',
+    filename: '[name].bundle.[contenthash].js',
   },
   devtool: 'source-map',
   module: {

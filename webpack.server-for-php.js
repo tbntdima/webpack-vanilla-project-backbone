@@ -2,7 +2,6 @@ const path = require('path');
 const postcssPresetEnv = require('postcss-preset-env');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
@@ -16,7 +15,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
-    publicPath: 'http://localhost:9000'
+    publicPath: 'http://localhost:9000/'
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -63,8 +62,16 @@ module.exports = {
       },
       // Images
       {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader']
+        test: /\.(png|svg|jpg|gif)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              outputPath: 'images/'
+            }
+          }
+        ]
       },
       // HTML|PHP files
       {
@@ -81,12 +88,13 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       filename: 'index.php',
       template: 'src/index.php'
     }),
-    new MiniCssExtractPlugin({}),
+    new MiniCssExtractPlugin({
+      filename: '[name].css'
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new WriteAssetsWebpackPlugin({
       force: true,
