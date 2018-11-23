@@ -13,7 +13,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js',
+    filename: '[name].[contenthash].js',
   },
   devtool: 'source-map',
   module: {
@@ -57,8 +57,8 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[path][name].[ext]',
-              outputPath: 'image/'
+              name: '[path][name].[ext]?[hash]',
+              outputPath: 'images/'
             }
           },
           {
@@ -98,12 +98,14 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist/*.*']),
+    new CleanWebpackPlugin(['dist/*']),
     new HtmlWebpackPlugin({
-      filename: 'index.php',
-      template: 'src/index.php'
+      filename: 'index.html',
+      template: 'src/index.html'
     }),
-    new MiniCssExtractPlugin({}),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css'
+    }),
 
   ],
   optimization: {
