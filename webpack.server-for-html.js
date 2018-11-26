@@ -37,7 +37,7 @@ module.exports = {
       // SCSS files
       // @TODO fix source map bug related to boostrap
       {
-        test: /\.(scss)$/,
+        test: /\.(css|scss)$/,
         use: [
           MiniCssExtractPlugin.loader,
           {

@@ -32,7 +32,7 @@ module.exports = {
       },
       // SCSS files
       {
-        test: /\.(scss)$/,
+        test: /\.(css|scss)$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
