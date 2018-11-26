@@ -15,7 +15,8 @@ Designed to work with php server.
 *Note: if you want to disable some libraries see [FAQ](https://github.com/dmitriyaa/webpack-project-backbone#faq)*
 
 ## Requirements:
-* Nodejs 10
+* Nodejs 8+
+* NPM 6+
 
 ## Usage:
 First of all download all the dependencies:
