@@ -38,8 +38,8 @@ npm run build
 ```
 
 ### Use index.php with php server
-* Change ```index.html``` to ```index.php``` in ```src``` folder.
-* Update ```webpack.prod.js``` file to:
+* Change ```index.html``` to ```index.php``` in ```src``` directory.
+* Update [webpack.prod.js](./webpack.prod.js) file to:
 ```
 new HtmlWebpackPlugin({
   filename: 'index.php',
@@ -61,7 +61,7 @@ Use the import command in ```css/scss``` file.
 Example: ```@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");```
 
 ### How to disable Twitter Bootstrap
-Simply remove bootstrap related imports from ```styles.scss```
+Simply remove bootstrap related imports from [styles.scss](./src/styles.scss)
 ```
 // Bootstrap
 @import "~bootstrap/scss/functions";
