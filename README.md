@@ -32,7 +32,7 @@ Then you have two options:
 ```
 npm run start
 ```
-* Oce you are ready to deploy the project on real server.
+* Once you are ready to deploy the project on real server.
 ```
 npm run build
 ```
