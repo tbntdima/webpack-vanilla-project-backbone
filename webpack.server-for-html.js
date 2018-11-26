@@ -35,12 +35,17 @@ module.exports = {
         }
       },
       // SCSS files
+      // @TODO fix source map bug related to boostrap
       {
         test: /\.(scss)$/,
         use: [
-          'style-loader',
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
+          },
           {
             loader: 'postcss-loader',
             options: {
@@ -49,10 +54,16 @@ module.exports = {
                 postcssPresetEnv({
                   autoprefixer: { browsers: ['last 4 version'] }
                 })
-              ]
+              ],
+              sourceMap: true
             }
           },
-          'sass-loader'
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            }
+          }
         ]
       },
       // Images

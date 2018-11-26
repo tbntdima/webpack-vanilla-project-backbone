@@ -34,9 +34,13 @@ module.exports = {
       {
         test: /\.(scss)$/,
         use: [
-          'style-loader',
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
+          },
           {
             loader: 'postcss-loader',
             options: {
@@ -45,10 +49,16 @@ module.exports = {
                 postcssPresetEnv({
                   autoprefixer: { browsers: ['last 4 version'] }
                 })
-              ]
+              ],
+              sourceMap: true
             }
           },
-          'sass-loader'
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            }
+          }
         ]
       },
       // Images
