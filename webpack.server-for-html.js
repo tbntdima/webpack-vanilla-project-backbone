@@ -1,5 +1,6 @@
 const path = require('path');
 const postcssPresetEnv = require('postcss-preset-env');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -102,6 +103,10 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css'
     }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    })
   ],
   optimization: {
     minimizer: [

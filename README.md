@@ -10,6 +10,9 @@ Designed to work with php server.
 
 ## Libraries:
 * Twitter Bootstrap mixins + utilities + grid + reboot
+* jQuery (you can use ```$()``` and ```jQuery()``` globally)
+
+*Note: if you want to disable these some library see [FAQ](/faq)*
 
 ## Requirements:
 * Nodejs 10
@@ -50,3 +53,24 @@ npm run server
  ```
  npm run build
  ```
+
+## FAQ
+### How to add Google Fonts
+Use the import command in css/scss file.
+Example: @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+
+### How to disable Twitter Bootstrap
+Simply remove bootstrap related imports from styles.scss
+// Bootstrap
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+...
+
+### How to disable jQuery
+In all webpack configuration files [```webpack.prod.js```, ```webpack.server-for-html.js```, ```webpack.server-for.php.js```] remove the following lines of code:
+```
+new webpack.ProvidePlugin({
+  $: 'jquery',
+  jQuery: 'jquery'
+})
+```

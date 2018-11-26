@@ -112,6 +112,10 @@ module.exports = {
     new WriteAssetsWebpackPlugin({
       force: true,
       extension: ['php']
+    }),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
     })
   ],
   optimization: {
