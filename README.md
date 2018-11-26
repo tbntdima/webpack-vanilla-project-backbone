@@ -56,18 +56,20 @@ npm run server
 
 ## FAQ
 ### How to add Google Fonts
-Use the import command in css/scss file.
-Example: @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");
+Use the import command in ```css/scss``` file.
+Example: ```@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");```
 
 ### How to disable Twitter Bootstrap
-Simply remove bootstrap related imports from styles.scss
+Simply remove bootstrap related imports from ```styles.scss```
+```
 // Bootstrap
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 ...
+```
 
 ### How to disable jQuery
-In all webpack configuration files [```webpack.prod.js```, ```webpack.server-for-html.js```, ```webpack.server-for.php.js```] remove the following lines of code:
+In all webpack configuration files [[webpack.prod.js](./webpack.prod.js), [webpack.server-for-html.js](./webpack.server-for-html.js), [webpack.server-for-php.js](./webpack.server-for-php.js)] remove the following lines of code:
 ```
 new webpack.ProvidePlugin({
   $: 'jquery',
