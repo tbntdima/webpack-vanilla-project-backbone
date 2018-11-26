@@ -12,7 +12,7 @@ Designed to work with php server.
 * Twitter Bootstrap mixins + utilities + grid + reboot
 * jQuery (you can use ```$()``` and ```jQuery()``` globally)
 
-*Note: if you want to disable these some library see [FAQ](https://github.com/dmitriyaa/webpack-project-backbone#faq)*
+*Note: if you want to disable some libraries see [FAQ](https://github.com/dmitriyaa/webpack-project-backbone#faq)*
 
 ## Requirements:
 * Nodejs 10
