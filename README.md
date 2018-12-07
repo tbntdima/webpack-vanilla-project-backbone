@@ -61,11 +61,10 @@ Use the import command in ```css/scss``` file.
 Example: ```@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");```
 
 ### How to disable Twitter Bootstrap
-Simply remove bootstrap related imports from [styles.scss](./src/styles.scss)
+Simply remove bootstrap related import from [styles.scss](./src/styles.scss)
 ```
 // Bootstrap
-@import "~bootstrap/scss/functions";
-@import "~bootstrap/scss/variables";
+@import './scss/bootstrap';
 ...
 ```
 
