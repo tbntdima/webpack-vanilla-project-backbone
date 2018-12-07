@@ -11,6 +11,7 @@ Designed to work with php server.
 ## Libraries:
 * Twitter Bootstrap mixins + utilities + grid + reboot
 * jQuery (you can use ```$()``` and ```jQuery()``` globally)
+* GreenSock tools
 
 *Note: if you want to disable some libraries see [FAQ](https://github.com/dmitriyaa/webpack-project-backbone#faq)*
 
@@ -68,6 +69,14 @@ Simply remove bootstrap related import from [styles.scss](./src/styles.scss)
 ...
 ```
 
+### How to disable GreenSock
+Simply remove GreenSock related import from [index.js](./src/index.js)
+```
+// Importing GreenSock tools
+import './js/greensock';
+...
+```
+
 ### How to disable jQuery
 In all webpack configuration files [[webpack.prod.js](./webpack.prod.js), [webpack.server-for-html.js](./webpack.server-for-html.js), [webpack.server-for-php.js](./webpack.server-for-php.js)] remove the following lines of code:
 ```
@@ -76,3 +85,5 @@ new webpack.ProvidePlugin({
   jQuery: 'jquery'
 })
 ```
+## Useful links
+* [GreenSock cheat sheet](https://ihatetomatoes.net/greensock-cheat-sheet/)
