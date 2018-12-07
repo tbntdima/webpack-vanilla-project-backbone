@@ -1,8 +1,16 @@
-// Importing styles
+/**
+ * Importing styles
+ */
 import './styles.scss';
 
-// Importing GreenSock tools
-import './js/greensock';
+/**
+ * Importaing GSAP tools
+ */
+import { TweenMax, CSSPlugin, AttrPlugin } from "gsap/all";
+ // CSSPlugin and AttrPlugin may get dropped by webpack, so it's important
+ // to keep below lines
+const plugins = [ CSSPlugin, AttrPlugin ];
+
 
 $(function() {
     // GreenSock sample

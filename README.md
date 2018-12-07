@@ -61,20 +61,29 @@ npm run server
 Use the import command in ```css/scss``` file.
 Example: ```@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");```
 
+### How to use GreenSock in other files
+You have to import necessary Classes as shown below:
+```
+import { TweenMax, CSSPlugin, AttrPlugin } from "gsap/all";
+ // CSSPlugin and AttrPlugin may get dropped by webpack, so it's important
+ // to keep below lines
+const plugins = [ CSSPlugin, AttrPlugin ];
+```
+
 ### How to disable Twitter Bootstrap
 Simply remove bootstrap related import from [styles.scss](./src/styles.scss)
 ```
 // Bootstrap
 @import './scss/bootstrap';
-...
 ```
 
 ### How to disable GreenSock
-Simply remove GreenSock related import from [index.js](./src/index.js)
+Simply remove the following lines from [index.js](./src/index.js)
 ```
-// Importing GreenSock tools
-import './js/greensock';
-...
+import { TweenMax, CSSPlugin, AttrPlugin } from "gsap/all";
+ // CSSPlugin and AttrPlugin may get dropped by webpack, so it's important
+ // to keep below lines
+const plugins = [ CSSPlugin, AttrPlugin ];
 ```
 
 ### How to disable jQuery
@@ -85,5 +94,6 @@ new webpack.ProvidePlugin({
   jQuery: 'jquery'
 })
 ```
+
 ## Useful links
 * [GreenSock cheat sheet](https://ihatetomatoes.net/greensock-cheat-sheet/)
