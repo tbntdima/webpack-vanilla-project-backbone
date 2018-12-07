@@ -1,6 +1,6 @@
 # Webpack based project backbone
 Simple webpack based project backbone for small projects.
-Designed to work with php server.
+Designed to work both with plain html and width php server.
 
 ## Features:
 * ES6 -> ES5 (babel) -> Minimized
