@@ -10,10 +10,11 @@ Designed to work both with plain html and width php server.
 
 ## Libraries:
 * Twitter Bootstrap mixins + utilities + grid + reboot
-* jQuery (you can use ```$()``` and ```jQuery()``` globally)
+* jQuery (you can use ```$()``` and ```jQuery()``` globally) - disabled by default
 * GreenSock tools
+* ScrollMagic
 
-*Note: if you want to disable some libraries see [FAQ](https://github.com/dmitriyaa/webpack-project-backbone#faq)*
+*Note: if you want to disable/enable some libraries see [FAQ](https://github.com/dmitriyaa/webpack-project-backbone#faq)*
 
 ## Requirements:
 * Nodejs 8+
@@ -61,13 +62,13 @@ npm run server
 Use the import command in ```css/scss``` file.
 Example: ```@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,700");```
 
-### How to use GreenSock in other files
-You have to import necessary Classes as shown below:
+### How to enable jQuery
+In all webpack configuration files [[webpack.prod.js](./webpack.prod.js), [webpack.server-for-html.js](./webpack.server-for-html.js), [webpack.server-for-php.js](./webpack.server-for-php.js)] uncomment the following lines:
 ```
-import { TweenMax, CSSPlugin, AttrPlugin } from "gsap/all";
- // CSSPlugin and AttrPlugin may get dropped by webpack, so it's important
- // to keep below lines
-const plugins = [ CSSPlugin, AttrPlugin ];
+new webpack.ProvidePlugin({
+    // $: 'jquery',
+    // jQuery: 'jquery'
+})
 ```
 
 ### How to disable Twitter Bootstrap
@@ -77,8 +78,8 @@ Simply remove bootstrap related import from [styles.scss](./src/styles.scss)
 @import './scss/bootstrap';
 ```
 
-### How to disable GreenSock
-Simply remove the following lines from [index.js](./src/index.js)
+### How to use GreenSock in other files
+Copy and paste to any file you want to use these tools:
 ```
 import { TweenMax, CSSPlugin, AttrPlugin } from "gsap/all";
  // CSSPlugin and AttrPlugin may get dropped by webpack, so it's important
@@ -86,13 +87,17 @@ import { TweenMax, CSSPlugin, AttrPlugin } from "gsap/all";
 const plugins = [ CSSPlugin, AttrPlugin ];
 ```
 
-### How to disable jQuery
-In all webpack configuration files [[webpack.prod.js](./webpack.prod.js), [webpack.server-for-html.js](./webpack.server-for-html.js), [webpack.server-for-php.js](./webpack.server-for-php.js)] remove the following lines of code:
+### How to disable Library that I don't need
+By default all libraries are included into ./src/index.js file
+If you don't want to use some library, simply remove an appropriate 'import'
+For example if you don't want to use ScrollMagic library, just remove the
+following lines
 ```
-new webpack.ProvidePlugin({
-  $: 'jquery',
-  jQuery: 'jquery'
-})
+/**
+ * Importing Scroll Magic
+ */
+import ScrollMagic from "ScrollMagic";
+import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js';
 ```
 
 ## Useful links
