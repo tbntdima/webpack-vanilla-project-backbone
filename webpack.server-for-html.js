@@ -123,8 +123,8 @@ module.exports = {
     },
     resolve: {
         alias: {
-            TweenMax: 'gsap/TweenMax',
-            TimelineMax: 'gsap/TimelineMax',
+            TweenMax: 'gsap/src/uncompressed/TweenMax.js',
+            TimelineMax: 'gsap/src/uncompressed/TimelineMax.js',
         }
     }
 };
