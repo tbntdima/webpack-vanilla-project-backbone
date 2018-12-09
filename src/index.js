@@ -5,16 +5,13 @@
 // Importing styles
 import './styles.scss';
 
-// Importing GSAP tools
-import {TweenMax, CSSPlugin, ScrollToPlugin} from "gsap/all";
-// CSSPlugin and AttrPlugin may get dropped by webpack, so it's important
-// to keep below lines if you use one of these Classes
-const plugins = [CSSPlugin, ScrollToPlugin];
-
-// Importing Scroll Magic
-import ScrollMagic from "ScrollMagic";
-import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js';
-import 'scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js';
+// GreenSock tools + ScrollMagic
+import TweenMax from 'gsap/src/minified/TweenMax.min';
+import TimelineMax from 'gsap/src/minified/TimelineMax.min';
+import ScrollMagic from 'scrollmagic/scrollmagic/minified/ScrollMagic.min';
+import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min';
+// Commen this line for prodution
+// import 'scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min';
 /* -------------------------------------------------------------------------- */
 
 
@@ -27,18 +24,17 @@ import 'scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js';
         repeat: -1,
         rotation: 360,
     });
-})();
-/* -------------------------------------------------------------------------- */
+    // init controller
+    const controller = new ScrollMagic.Controller();
 
-// init controller
-const controller = new ScrollMagic.Controller();
-
-// build scene
-const scene = new ScrollMagic.Scene({
+    // build scene
+    const scene = new ScrollMagic.Scene({
           duration: 50,
           offset: 50,
           triggerHook: 'onLeave'
-        })
-        .setTween("#webpack-img", 2, {css: {y: 100}})
-        .addIndicators({name: "2 (duration: 100)"})
-        .addTo(controller);
+    })
+    .setTween("#webpack-img", 2, {css: {y: 100}})
+    .addIndicators({name: "2 (duration: 100)"})
+    .addTo(controller);
+})();
+/* -------------------------------------------------------------------------- */
