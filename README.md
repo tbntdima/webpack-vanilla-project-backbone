@@ -81,10 +81,8 @@ Simply remove bootstrap related import from [styles.scss](./src/styles.scss)
 ### How to use GreenSock in other files
 Copy and paste to any file you want to use these tools:
 ```
-import { TweenMax, CSSPlugin, AttrPlugin } from "gsap/all";
- // CSSPlugin and AttrPlugin may get dropped by webpack, so it's important
- // to keep below lines
-const plugins = [ CSSPlugin, AttrPlugin ];
+import TweenMax from 'gsap/src/minified/TweenMax.min';
+import TimelineMax from 'gsap/src/minified/TimelineMax.min';
 ```
 
 ### How to disable Library that I don't need
