@@ -11,7 +11,7 @@ import TimelineMax from 'gsap/src/minified/TimelineMax.min';
 import ScrollMagic from 'scrollmagic/scrollmagic/minified/ScrollMagic.min';
 import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min';
 // Commen this line for prodution
-// import 'scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min';
+import 'scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min';
 /* -------------------------------------------------------------------------- */
 
 
