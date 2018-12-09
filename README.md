@@ -104,3 +104,4 @@ import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js';
 * [GreenSock cheat sheet](https://ihatetomatoes.net/greensock-cheat-sheet/)
 * [ScrollMagic docs](https://github.com/janpaepke/ScrollMagic/wiki/Getting-Started-:-How-to-use-ScrollMagic)
 * [ScrollMagic Scene Manipulation](http://scrollmagic.io/examples/basic/scene_manipulation.html)
+* [Scroll + GSAP config help](https://www.grzegorowski.com/scrollmagic-setup-for-webpack-commonjs/)
