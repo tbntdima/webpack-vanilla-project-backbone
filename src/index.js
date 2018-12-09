@@ -14,6 +14,7 @@ const plugins = [CSSPlugin, ScrollToPlugin];
 // Importing Scroll Magic
 import ScrollMagic from "ScrollMagic";
 import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js';
+import 'scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js';
 /* -------------------------------------------------------------------------- */
 
 
@@ -28,3 +29,16 @@ import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js';
     });
 })();
 /* -------------------------------------------------------------------------- */
+
+// init controller
+const controller = new ScrollMagic.Controller();
+
+// build scene
+const scene = new ScrollMagic.Scene({
+          duration: 50,
+          offset: 50,
+          triggerHook: 'onLeave'
+        })
+        .setTween("#webpack-img", 2, {css: {y: 100}})
+        .addIndicators({name: "2 (duration: 100)"})
+        .addTo(controller);
