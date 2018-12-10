@@ -78,27 +78,19 @@ Simply remove bootstrap related import from [styles.scss](./src/styles.scss)
 @import './scss/bootstrap';
 ```
 
-### How to use GreenSock in other files
+### How to use GreenSock / ScrollMagic in other files
 Copy and paste to any file you want to use these tools:
 ```
 import TweenMax from 'gsap/src/minified/TweenMax.min';
 import TimelineMax from 'gsap/src/minified/TimelineMax.min';
-```
-
-### How to disable Library that I don't need
-By default all libraries are included into ./src/index.js file
-If you don't want to use some library, simply remove an appropriate 'import'
-For example if you don't want to use ScrollMagic library, just remove the
-following lines
-```
-/**
- * Importing Scroll Magic
- */
-import ScrollMagic from "ScrollMagic";
-import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js';
+import ScrollMagic from 'scrollmagic/scrollmagic/minified/ScrollMagic.min';
+import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min';
+// For development only
+// import 'scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min';
 ```
 
 ## Useful links
+* [GreenSock - getting started presentation](https://greensock.com/jump-start-js)
 * [GreenSock cheat sheet](https://ihatetomatoes.net/greensock-cheat-sheet/)
 * [ScrollMagic docs](https://github.com/janpaepke/ScrollMagic/wiki/Getting-Started-:-How-to-use-ScrollMagic)
 * [ScrollMagic Scene Manipulation](http://scrollmagic.io/examples/basic/scene_manipulation.html)
