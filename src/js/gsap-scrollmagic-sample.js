@@ -15,17 +15,17 @@ import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min';
         repeat: -1,
         rotation: 360,
     });
-    // init controller
-    const controller = new ScrollMagic.Controller();
+//     // init controller
+//     const controller = new ScrollMagic.Controller();
 
-    // build scene
-    const scene = new ScrollMagic.Scene({
-          duration: 50,
-          offset: 50,
-          triggerHook: 'onLeave'
-    })
-    .setTween("#webpack-img", 2, {css: {y: 100}})
-    // For development only
-    // .addIndicators({name: "2 (duration: 100)"})
-    .addTo(controller);
+//     // build scene
+//     const scene = new ScrollMagic.Scene({
+//           duration: 50,
+//           offset: 50,
+//           triggerHook: 'onLeave'
+//     })
+//     .setTween("#webpack-img", 2, {css: {y: 100}})
+//     // For development only
+//     // .addIndicators({name: "2 (duration: 100)"})
+//     .addTo(controller);
 })();
