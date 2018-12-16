@@ -1,6 +1,6 @@
 // Dependencies
-import TweenMax from 'gsap/src/minified/TweenMax.min';
-import TimelineMax from 'gsap/src/minified/TimelineMax.min';
+import TweenMax from 'gsap/src/minified/TweenMax.min'; // Probably not needed
+import TimelineMax from 'gsap/src/minified/TimelineMax.min'; // Probably not needed 
 import ScrollMagic from 'scrollmagic/scrollmagic/minified/ScrollMagic.min';
 import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min';
 // For development only
