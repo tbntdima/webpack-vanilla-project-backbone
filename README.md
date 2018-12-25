@@ -1,5 +1,5 @@
 # Webpack based project backbone
-Simple webpack based project backbone for small projects.
+Simple webpack based project backbone for small and medium projects.
 Designed to work both with plain html and width php server.
 
 ## Features:
