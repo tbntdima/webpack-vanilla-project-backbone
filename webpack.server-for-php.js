@@ -1,3 +1,5 @@
+// Stoped supporting due to lack of usage
+
 const path = require('path');
 const postcssPresetEnv = require('postcss-preset-env');
 const webpack = require('webpack');
