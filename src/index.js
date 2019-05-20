@@ -1,5 +1,4 @@
 import './scss/index.scss';
-// GSAP + ScrollMagic sample
-import './js/gsap-scrollmagic-sample.js';
+import './js/gsap-scrollmagic-sample.js'; // GSAP + ScrollMagic sample
 
-console.log('hello world!');
+console.log('%c enjoy hacking 😊', 'color: #007bff');
