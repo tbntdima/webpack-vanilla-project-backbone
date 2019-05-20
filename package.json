@@ -16,8 +16,12 @@
     "project",
     "base"
   ],
-  "author": "Dmitriy An",
-  "license": "ISC",
+  "author": {
+    "name": "Dmitriy An",
+    "email": "dmitriym44@gmail.com",
+    "url": "https://dmitriyaa.github.io"
+  },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/dmitriyaa/webpack-project-base/issues"
   },

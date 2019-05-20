@@ -16,6 +16,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js'
   },
+  stats: 'errors-warnings',
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './src',
