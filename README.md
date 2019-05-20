@@ -73,7 +73,7 @@ Simply remove bootstrap related import from [styles.scss](./src/styles.scss)
 
 ```scss
 // Bootstrap
-@import './scss/bootstrap';
+@import './bootstrap';
 ```
 
 ### How to use GreenSock / ScrollMagic
