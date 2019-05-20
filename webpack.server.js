@@ -2,21 +2,25 @@ const path = require('path');
 const postcssPresetEnv = require('postcss-preset-env');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const WriteAssetsWebpackPlugin = require('write-assets-webpack-plugin');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: {
     app: './src/index.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.[contenthash].js'
+    filename: '[name].bundle.js'
   },
-  // devtool: 'source-map',
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './src',
+    port: 8000
+  },
   module: {
     rules: [
       // JS files
@@ -31,6 +35,7 @@ module.exports = {
         }
       },
       // SCSS files
+      // @TODO fix source map bug related to boostrap
       {
         test: /\.(css|scss)$/,
         use: [
@@ -65,33 +70,13 @@ module.exports = {
       },
       // Images
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(png|svg|jpg|gif)$/i,
         use: [
           {
             loader: 'file-loader',
             options: {
-              name: '[path][name].[ext]?[hash]',
+              name: '[path][name].[ext]',
               outputPath: 'images/'
-            }
-          },
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              mozjpeg: {
-                progressive: true,
-                quality: 85
-              },
-              // optipng.enabled: false will disable optipng
-              optipng: {
-                enabled: false
-              },
-              pngquant: {
-                quality: '75-90',
-                speed: 4
-              },
-              gifsicle: {
-                interlaced: false
-              }
             }
           }
         ]
@@ -124,13 +109,12 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['dist/*']),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'src/index.html'
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css'
+      filename: '[name].css'
     }),
     new webpack.ProvidePlugin({
       // $: 'jquery',
@@ -138,10 +122,7 @@ module.exports = {
     })
   ],
   optimization: {
-    minimizer: [new UglifyJsPlugin({}), new OptimizeCSSAssetsPlugin({})],
-    splitChunks: {
-      chunks: 'all'
-    }
+    minimizer: [new UglifyJsPlugin({}), new OptimizeCSSAssetsPlugin({})]
   },
   resolve: {
     alias: {
