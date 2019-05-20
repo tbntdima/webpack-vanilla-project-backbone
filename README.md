@@ -1,14 +1,13 @@
 # Webpack based project backbone
 
 Simple webpack based project backbone for small and medium projects.
-Designed to work both with plain html and width php server.
 
 ## Features
 
 - ES6 -> ES5 (babel) -> Minimized
-- SCSS -> CSS -> Prefixed -> Minimized
+- SCSS -> CSS -> PostCSS(autoprefixer) -> Minimized
 - Images -> Minimized
-- Live Reaload + HMR -> stream to Apache
+- Live Reaload + HMR
 
 ## Libraries
 
@@ -26,55 +25,29 @@ Note: if you want to disable/enable some libraries see [FAQ](https://github.com/
 
 ## Usage
 
-First of all download all the dependencies:
+Download all dependencies:
 
 ```bash
-cd path_to_webpack-project-backbone
+cd path/to/webpack-project-backbone
 ```
 
 ```bash
-npm install
+yarn
 ```
 
-Then you have two options:
-
-### Use index.html without php server support
-
-- Launch webpack server (localhost:5000) and start developing in [src](./src) directory.
+For development:
 
 ```bash
-npm run start
+yarn start
 ```
 
-- Once you are ready to deploy the project on real server.
+For deployment:
 
 ```bash
-npm run build
+yarn build
 ```
 
-### Use index.php with php server
-
-- Change [index.html](./src/index.html) to `index.php` in [src](./src) directory.
-- Update [webpack.prod.js](./webpack.prod.js) file to:
-
-```bash
-new HtmlWebpackPlugin({
-  filename: 'index.php',
-  template: 'src/index.php'
-}),
-```
-
-- Run the webpack server. It serve assets on localhost:9000 and stream them to your php server (like localhost:8080).
-
-```bash
-npm run server
-```
-
-- Once you are ready to deploy the project on real server.
-
-```bash
-npm run build
-```
+enjoy hacking 😊
 
 ## FAQ
 
@@ -103,7 +76,7 @@ Simply remove bootstrap related import from [styles.scss](./src/styles.scss)
 @import './scss/bootstrap';
 ```
 
-### How to use GreenSock / ScrollMagic in other files
+### How to use GreenSock / ScrollMagic
 
 Copy and paste to any file you want to use these tools:
 
@@ -116,7 +89,7 @@ import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min';
 // import 'scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min';
 ```
 
-## Useful links
+## References
 
 - [GreenSock - getting started presentation](https://greensock.com/jump-start-js)
 - [GreenSock cheat sheet](https://ihatetomatoes.net/greensock-cheat-sheet/)
