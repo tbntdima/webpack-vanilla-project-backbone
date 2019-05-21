@@ -22,7 +22,7 @@ Note: if you want to disable/enable some libraries see [FAQ](https://github.com/
 
 - nodejs 8+
 - npm 6+
-- yarn 1.15 +
+- yarn 1.15 + `npm i -g yarn`
 
 ## Usage
 
