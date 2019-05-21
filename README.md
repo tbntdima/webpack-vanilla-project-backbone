@@ -20,8 +20,9 @@ Note: if you want to disable/enable some libraries see [FAQ](https://github.com/
 
 ## Requirements
 
-- Nodejs 8+
-- NPM 6+
+- nodejs 8+
+- npm 6+
+- yarn 1.15 +
 
 ## Usage
 
