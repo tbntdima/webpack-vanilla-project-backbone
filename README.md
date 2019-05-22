@@ -2,6 +2,8 @@
 
 Simple webpack based project backbone for small and medium projects.
 
+![dmitriyaa.github.io](https://raw.githubusercontent.com/dmitriyaa/webpack-project-backbone/master/src/images/foo.jpg)
+
 ## Features
 
 - ES6 -> ES5 (babel) -> Minimized
