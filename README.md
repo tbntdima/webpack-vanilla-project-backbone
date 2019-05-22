@@ -2,8 +2,6 @@
 
 Simple webpack based project backbone for small and medium projects.
 
-![dmitriyaa.github.io](https://raw.githubusercontent.com/dmitriyaa/webpack-project-backbone/master/src/images/foo.jpg)
-
 ## Features
 
 - ES6 -> ES5 (babel) -> Minimized
@@ -99,3 +97,5 @@ import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min';
 - [ScrollMagic docs](https://github.com/janpaepke/ScrollMagic/wiki/Getting-Started-:-How-to-use-ScrollMagic)
 - [ScrollMagic Scene Manipulation](http://scrollmagic.io/examples/basic/scene_manipulation.html)
 - [Scroll + GSAP config help](https://www.grzegorowski.com/scrollmagic-setup-for-webpack-commonjs/)
+
+![dmitriyaa.github.io](https://raw.githubusercontent.com/dmitriyaa/webpack-project-backbone/master/src/images/foo.jpg)
