@@ -9,23 +9,28 @@ import 'scrollmagic/scrollmagic/minified/plugins/animation.gsap.min';
 // Execution
 (() => {
   // GreenSock sample
-  const tween = TweenMax.to('#webpack-img', 12, {
-    duration: 2,
-    ease: Power0.easeNone,
-    repeat: -1,
-    rotation: 360
-  });
-  //     // init controller
-  //     const controller = new ScrollMagic.Controller();
+  const moveUp = element => {
+    TweenMax.to(element, 2, {
+      y: '-=20px',
+      ease: Power0.easeNone,
+      onCompleteParams: [element],
+      onComplete: moveDown
+    });
+  };
 
-  //     // build scene
-  //     const scene = new ScrollMagic.Scene({
-  //           duration: 50,
-  //           offset: 50,
-  //           triggerHook: 'onLeave'
-  //     })
-  //     .setTween("#webpack-img", 2, {css: {y: 100}})
-  //     // For development only
-  //     // .addIndicators({name: "2 (duration: 100)"})
-  //     .addTo(controller);
+  const moveDown = element => {
+    TweenMax.to(element, 2, {
+      y: '+=20px',
+      ease: Power0.easeNone,
+      onCompleteParams: [element],
+      onComplete: moveUp
+    });
+  };
+
+  const levitate = () => {
+    const mob = document.querySelector('#webpack-img');
+    moveDown(mob);
+  };
+
+  levitate();
 })();
