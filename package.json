@@ -1,11 +1,13 @@
 {
-  "name": "webpack-project-base",
+  "name": "webpack-project-backbone",
   "version": "1.0.0",
   "description": "Webpack based project backbone",
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.server.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -25,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/dmitriyaa/webpack-project-base/issues"
   },
-  "homepage": "https://github.com/dmitriyaa/webpack-project-base#readme",
+  "homepage": "https://dmitriyaa.github.io/webpack-project-backbone/",
   "devDependencies": {
     "@babel/core": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
@@ -52,6 +54,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "gh-pages": "^2.0.1",
     "gsap": "^2.1.2",
     "jquery": "^3.3.1",
     "scrollmagic": "^2.0.6"
